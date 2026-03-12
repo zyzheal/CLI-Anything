@@ -56,7 +56,7 @@ CLI is the universal interface for both humans and AI agents:
 
 - **Python 3.10+**
 - Target software installed (e.g., GIMP, Blender, LibreOffice, or your own application)
-- A supported AI coding agent: [Claude Code](#-claude-code) | [OpenCode](#-opencode) | [More Platforms](#-more-platforms-coming-soon)
+- A supported AI coding agent: [Claude Code](#-claude-code) | [OpenCode](#-opencode) | [Qodercli](#-qodercli) | [More Platforms](#-more-platforms-coming-soon)
 
 ### Pick Your Platform
 
@@ -178,6 +178,28 @@ The command runs as a subtask and follows the same 7-phase methodology as Claude
 
 # Focused refinement — target a specific functionality area
 /cli-anything-refine ./gimp "batch processing and filters"
+```
+
+</details>
+
+<details>
+<summary><h4 id="-qodercli">⚡ Qodercli</h4></summary>
+
+**Step 1: Register the Plugin**
+
+```bash
+git clone https://github.com/HKUDS/CLI-Anything.git
+bash CLI-Anything/qoder-plugin/setup-qodercli.sh
+```
+
+This registers the cli-anything plugin in `~/.qoder.json`. Start a new Qodercli session after registration.
+
+**Step 2: Use CLI-Anything from Qodercli**
+
+```bash
+/cli-anything:cli-anything ./gimp
+/cli-anything:refine ./gimp "batch processing and filters"
+/cli-anything:validate ./gimp
 ```
 
 </details>
