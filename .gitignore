@@ -16,7 +16,6 @@
 !/CONTRIBUTING.md
 !/assets/
 !/.claude-plugin/
-!/docs/
 !/.github/
 
 # Step 3: Allow cli-anything-plugin, codex-skill, and skill_generation tests
@@ -102,6 +101,12 @@ assets/gen_typing_gif.py
 !README_CN.md
 !opencode-commands/
 !/qoder-plugin/
+
+# Step 10: Allow CLI Hub registry and frontend
+!/registry.json
+!/docs/
+/docs/*
+!/docs/hub/
 !/notebooklm/
 /notebooklm/*
 /notebooklm/.*
