@@ -167,7 +167,7 @@ For agent workflows with multiple commands, use daemon mode:
 
 1. Start daemon: `cli-anything-browser session daemon-start`
 2. Run commands: Each command reuses the MCP connection
-3. Stop daemon: `cli-autocomplete-browser session daemon-stop`
+3. Stop daemon: `cli-anything-browser session daemon-stop`
 
 This avoids the 1-3 second cold start overhead for each command.
 
