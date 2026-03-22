@@ -47,6 +47,9 @@
 !/novita/
 !/ollama/
 !/browser/
+!/seaclip/
+!/pm2/
+!/chromadb/
 
 # Step 5: Inside each software dir, ignore everything (including dotfiles)
 /gimp/*
@@ -81,6 +84,12 @@
 /ollama/.*
 /browser/*
 /browser/.*
+/seaclip/*
+/seaclip/.*
+/pm2/*
+/pm2/.*
+/chromadb/*
+/chromadb/.*
 
 # Step 6: ...except agent-harness/
 !/gimp/agent-harness/
@@ -100,6 +109,9 @@
 !/novita/agent-harness/
 !/ollama/agent-harness/
 !/browser/agent-harness/
+!/seaclip/agent-harness/
+!/pm2/agent-harness/
+!/chromadb/agent-harness/
 
 # Step 7: Ignore build artifacts within allowed dirs
 **/__pycache__/
