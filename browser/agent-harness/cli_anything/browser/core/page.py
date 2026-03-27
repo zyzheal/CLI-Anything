@@ -13,22 +13,33 @@ if TYPE_CHECKING:
     from cli_anything.browser.core.session import Session
 
 from cli_anything.browser.utils import domshell_backend as backend
+from cli_anything.browser.utils.security import validate_url
 
 
 def open_page(session: "Session", url: str) -> dict:
     """Open a URL in Chrome.
+
+    Validates the URL for security before navigation. Blocks dangerous schemes
+    (file://, javascript:, data:, etc.) and optionally private networks.
 
     Args:
         session: Current browser session
         url: URL to navigate to
 
     Returns:
-        Result dict with URL and status
+        Result dict with URL and status, or error dict if validation fails
 
     Example:
         >>> open_page(session, "https://example.com")
         {"url": "https://example.com", "status": "loaded"}
+        >>> open_page(session, "file:///etc/passwd")
+        {"error": "Blocked URL scheme: file"}
     """
+    # Validate URL for security
+    is_valid, error_msg = validate_url(url)
+    if not is_valid:
+        return {"error": error_msg}
+
     use_daemon = session.daemon_mode
     result = backend.open_url(url, use_daemon=use_daemon)
     session.set_url(url)
